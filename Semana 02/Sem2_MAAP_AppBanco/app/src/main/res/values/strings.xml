@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Sem2_MAAP_AppBanco</string>
+    <string name="txtContactos">contactos</string>
+    <string name="txtAsistente">asistente de voz</string>
+    <string name="txtBuscar">buscar en google</string>
+    <string name="txtLlamar">llamar a miguel</string>
+    <string name="txtCompartir">compartir texto</string>
+    <string name="txtLogin">iniciar</string>
+    <string name="txtSplash">splash</string>
+    <string name="txtRegistrar">registrar</string>
+    <string name="txtReporte">reporte</string>
+    <string name="txtGoogle">google</string>
+    <string name="txtIntentsImplicito">intents implicito</string>
+</resources>

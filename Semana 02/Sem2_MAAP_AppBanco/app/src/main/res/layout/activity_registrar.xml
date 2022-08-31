@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/onSecondary"
+    tools:context=".Registrar">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="REGISTRAR"
+        android:textColor="@color/Secondary"
+        android:textAlignment="center"
+        android:textSize="24dp"
+        android:layout_margin="20dp"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/edtProfesion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Profesion"
+        android:textColor="@color/Primary"
+        android:textColorHint="@color/onPrimary"
+        android:layout_margin="20dp"
+        />
+    <EditText
+        android:id="@+id/edtDireccion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/Primary"
+        android:textColorHint="@color/onPrimary"
+        android:hint="Dirección"
+        android:layout_margin="20dp"
+        />
+    <Button
+        android:id="@+id/btnRegistrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:textColor="@color/Primary"
+        android:text="@string/txtRegistrar"
+        android:onClick="registrar"/>
+
+
+</LinearLayout>

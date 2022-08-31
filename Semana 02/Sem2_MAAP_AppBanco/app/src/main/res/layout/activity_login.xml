@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/onSecondary"
+    tools:context=".Login">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="LOGIN"
+        android:textColor="@color/Secondary"
+        android:textAlignment="center"
+        android:textSize="24dp"
+        android:layout_margin="20dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edtUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/Primary"
+        android:textColorHint="@color/onPrimary"
+        android:hint="Usuario"
+        android:layout_margin="20dp" />
+
+    <EditText
+        android:id="@+id/edtPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/Primary"
+        android:textColorHint="@color/onPrimary"
+        android:hint="Contraseña"
+        android:layout_margin="20dp" />
+
+    <EditText
+        android:id="@+id/edtEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/Primary"
+        android:textColorHint="@color/onPrimary"
+        android:hint="Correo"
+        android:layout_margin="20dp" />
+
+    <Button
+        android:id="@+id/btnIniciar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/Primary"
+        android:text="@string/txtLogin"
+        android:layout_margin="20dp"/>
+
+
+</LinearLayout>

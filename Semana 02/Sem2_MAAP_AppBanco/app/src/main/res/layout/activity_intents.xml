@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:background="@color/onSecondary"
+    tools:context=".Intents">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="INTENTS"
+        android:gravity="center"
+        android:layout_margin="20dp"
+        android:textColor="@color/Secondary"
+        android:textSize="24dp"
+        android:textStyle="bold"/>
+
+    <Button
+        android:id="@+id/btnIntent1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/Primary"
+        android:layout_margin="20dp"
+        android:text="@string/txtContactos" />
+    <Button
+        android:id="@+id/btnIntent2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/Primary"
+        android:text="@string/txtAsistente"
+        android:layout_margin="20dp"
+        />
+    <Button
+        android:id="@+id/btnIntent3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/Primary"
+        android:text="@string/txtBuscar"
+        android:layout_margin="20dp"
+        />
+    <Button
+        android:id="@+id/btnIntent4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/Primary"
+        android:text="@string/txtLlamar"
+        android:layout_margin="20dp"
+        />
+
+    <EditText
+        android:id="@+id/edtCompartir"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Texto a compartir"
+        android:textColor="@color/Primary"
+        android:textColorHint="@color/Secondary"
+        android:layout_margin="20dp"/>
+
+    <Button
+        android:id="@+id/btnIntent5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txtCompartir"
+        android:textColor="@color/Primary"
+        android:layout_margin="20dp"
+        />
+
+
+</LinearLayout>
