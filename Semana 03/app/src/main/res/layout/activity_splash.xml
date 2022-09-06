@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Splash">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="center"
+        app:srcCompat="@drawable/banner_splash_screen"
+
+        ></ImageView>
+    <View  android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:background="@drawable/degradado"
+        >
+
+    </View>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="top|center"
+
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_weight="2.5"
+            >
+            <ImageView
+                android:id="@+id/splashLogo"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                app:srcCompat="@drawable/logo"
+                ></ImageView>
+            <TextView
+                android:id="@+id/txtSplashtexto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="E Corp"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="30sp"
+                android:typeface="sans"
+                ></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Banca Móvil"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:typeface="sans"
+                android:layout_margin="20dp"
+                ></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_weight="9"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ya tienes cuenta?"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:typeface="sans"
+                android:layout_marginRight="20dp"
+                ></TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Inicia sesion"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:typeface="sans"
+                android:id="@+id/tvIniciar"
+                ></TextView>
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Terminos de uso y privacidad"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:gravity="center"
+
+            ></TextView>
+    </LinearLayout>
+</FrameLayout>

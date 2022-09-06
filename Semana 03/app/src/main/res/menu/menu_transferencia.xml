@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/txtMenuRegistrar"
+        android:id="@+id/nav_registrar"
+        android:icon="@drawable/ic_registrarusuario"
+        app:showAsAction="always"
+        />
+
+    <item android:title="@string/txtMenuTransferencia"
+        android:id="@+id/nav_transferencia"
+        android:icon="@drawable/ic_transferencia"
+        app:showAsAction="always"
+        />
+
+    <item android:title="@string/txtMenuConsultarTransferencia"
+        android:id="@+id/nav_consultartransferencia"
+        android:icon="@drawable/ic_consultartransferencia"
+        app:showAsAction="always"/>
+
+    <item android:title="@string/txtMenuPreferencias"
+        android:id="@+id/nav_preferencias"
+        android:icon="@drawable/ic_personalizar"
+        app:showAsAction="always"
+        />
+
+</menu>
