@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_registrar">
+
+    <fragment
+        android:id="@+id/nav_registrar"
+        android:name="com.acevedo.examen_sem3_apm.ui.registrar.RegistrarFragment"
+        android:label="@string/menu_registrar"
+        tools:layout="@layout/fragment_registrar" />
+
+    <fragment
+        android:id="@+id/nav_realizar"
+        android:name="com.acevedo.examen_sem3_apm.ui.realizar.RealizarFragment"
+        android:label="@string/menu_realizar"
+        tools:layout="@layout/fragment_realizar" />
+
+    <fragment
+        android:id="@+id/nav_buscar"
+        android:name="com.acevedo.examen_sem3_apm.ui.buscar.BuscarFragment"
+        android:label="@string/menu_buscar"
+        tools:layout="@layout/fragment_buscar" />
+
+    <fragment
+        android:id="@+id/nav_preferencias"
+        android:name="com.acevedo.examen_sem3_apm.ui.preferencias.PreferenciasFragment"
+        android:label="@string/menu_preferencias"
+        tools:layout="@layout/fragment_preferencias" />
+
+</navigation>
