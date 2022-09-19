@@ -1,0 +1,2 @@
+rootProject.name = "mapSqLite1"
+include ':app'
