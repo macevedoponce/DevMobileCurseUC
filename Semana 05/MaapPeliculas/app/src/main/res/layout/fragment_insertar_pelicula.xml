@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="20dp"
+    tools:context=".ui.InsertarPelicula">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title_fragment"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textAllCaps="true"
+        android:gravity="center"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/id"
+        android:ems="10"
+        android:inputType="number"
+        android:id="@+id/edtIdPelicula"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/title"
+        android:ems="10"
+        android:inputType="text"
+        android:id="@+id/edtTitlePelicula"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/description"
+        android:ems="10"
+        android:inputType="textAutoCorrect"
+        android:id="@+id/edtDescriptionPelicula"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/duration"
+        android:ems="10"
+        android:inputType="time"
+        android:id="@+id/edtDurationPelicula"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/year"
+        android:ems="10"
+        android:inputType="datetime"
+        android:id="@+id/edtYearPelicula"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/director"
+        android:ems="10"
+        android:inputType="text"
+        android:id="@+id/edtDirectorPelicula"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/category"
+        android:ems="10"
+        android:inputType="text"
+        android:id="@+id/edtCategoryPelicula"/>
+    <Button
+        android:id="@+id/btnInsertarPelicula"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_insertar_pelicula"/>
+
+
+</LinearLayout>

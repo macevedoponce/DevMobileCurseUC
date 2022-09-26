@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_insertar_pelicula">
+
+    <fragment
+        android:id="@+id/nav_insertar_pelicula"
+        android:name="com.acevedo.maappeliculas.ui.InsertarPelicula"
+        android:label="@string/menu_registrar"
+        tools:layout="@layout/fragment_insertar_pelicula" />
+    <fragment
+        android:id="@+id/nav_listar_pelicula"
+        android:name="com.acevedo.maappeliculas.ui.ListarPeliculas"
+        android:label="@string/menu_listar"
+        tools:layout="@layout/fragment_listar_peliculas" />
+    <fragment
+        android:id="@+id/nav_consultar_pelicula"
+        android:name="com.acevedo.maappeliculas.ui.ConsultarPelicula"
+        android:label="@string/menu_consultar"
+        tools:layout="@layout/fragment_consultar_pelicula" />
+
+
+</navigation>

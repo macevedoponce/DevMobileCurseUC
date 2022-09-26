@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        tools:context=".ui.InsertarUsuario">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Insertar Usuario Fragment"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:textSize="32dp"/>
+
+        <EditText
+            android:id="@+id/edtIdUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_marginTop="10dp"
+            android:inputType="textPersonName"
+            android:hint="Código usuario" />
+
+        <EditText
+            android:id="@+id/edtNameUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_marginTop="10dp"
+            android:inputType="textPersonName"
+            android:hint="Nombre de Usuario" />
+
+        <EditText
+            android:id="@+id/edtPhoneUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_marginTop="10dp"
+            android:inputType="phone"
+            android:hint="Telefono Usuario" />
+        <Button
+            android:id="@+id/btnRegistrarUsuario"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:text="Registrar Usuario"/>
+    </LinearLayout>

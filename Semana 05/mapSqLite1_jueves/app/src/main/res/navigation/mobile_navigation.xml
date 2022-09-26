@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_insertarUsuario"
+        android:name="com.example.mapsqlite1.ui.InsertarUsuario"
+        android:label="@string/menu_insertarUsuario"
+        tools:layout="@layout/fragment_insertar_usuario" />
+
+    <fragment
+        android:id="@+id/nav_consultarUsuario"
+        android:name="com.example.mapsqlite1.ui.ConsultarUsuarioFragment"
+        android:label="@string/menu_consultarUsuario"
+        tools:layout="@layout/fragment_consultar_usuario" />
+
+    <fragment
+        android:id="@+id/nav_listarUsuario"
+        android:name="com.example.mapsqlite1.ui.ListarUsuarioFragment"
+        android:label="@string/menu_listarUsuario"
+        tools:layout="@layout/fragment_listar_usuario" />
+
+    <fragment
+        android:id="@+id/nav_listarUsuarioSpinner"
+        android:name="com.example.mapsqlite1.ui.ListarUsuarioSpinnerFragment"
+        android:label="@string/menu_listarUsuarioSpinner"
+        tools:layout="@layout/fragment_listar_usuario_spinner" />
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.mapsqlite1.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.example.mapsqlite1.ui.gallery.GalleryFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.example.mapsqlite1.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" />
+</navigation>

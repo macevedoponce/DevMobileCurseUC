@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ListaUsuariosSpinner">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lista de usuarios"
+        android:textSize="24sp"
+        android:gravity="center"
+        />
+    <Spinner
+        android:id="@+id/spiUsuarios"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_margin="15dp"
+        android:spinnerMode="dialog"/>
+    <TextView
+        android:id="@+id/txtIdSP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ID"
+        android:textSize="24sp"
+        android:textColor="#E91E63"
+        android:gravity="center"
+        />
+    <TextView
+        android:id="@+id/txtNombreSP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MIGUEL ANGEL ACEVEDO PONCE"
+        android:textSize="24sp"
+        android:gravity="center"
+        />
+    <TextView
+        android:id="@+id/txtTelefonoSP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="982126861"
+        android:textSize="24sp"
+        android:gravity="center"
+        />
+
+</LinearLayout>
