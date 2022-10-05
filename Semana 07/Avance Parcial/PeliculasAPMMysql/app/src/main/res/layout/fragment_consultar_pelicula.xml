@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    tools:context=".ui.consultar.ConsultarPelicula">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="consultar pelicula"
+        android:textAllCaps="true"
+        android:textSize="18sp"
+        android:gravity="center"
+        />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilIdPeliculaConsulta"
+        style="@style/Base.Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:helperText="Requerido"
+        app:startIconDrawable="@drawable/ic_id_pelicula">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtIdPeliculaConsulta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Código de pelicula"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnBuscarPelicula"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Buscar"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/imgPelicula"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/btn_plus"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/txtTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Title"
+                android:textSize="20sp"
+                android:textAllCaps="true"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/txtDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                android:textSize="15sp"
+                android:textStyle="italic"/>
+            <TextView
+                android:id="@+id/txtTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="01:10:15"
+                android:textSize="12sp"/>
+            <TextView
+                android:id="@+id/txtYear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2022/10/05"
+                android:textSize="12sp"/>
+            <TextView
+                android:id="@+id/txtDirector"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Miguel Acevedo"
+                android:textStyle="bold"
+                android:textSize="12sp"/>
+            <TextView
+                android:id="@+id/txtCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="terror"
+                android:textStyle="italic"
+                android:textSize="12sp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</LinearLayout>

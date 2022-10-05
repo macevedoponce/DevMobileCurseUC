@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargar imágenes</title>
+</head>
+<body>
+    <form method="post" action="recibirImagenRegistrada.php" enctype="multipart/form-data"> 
+        
+
+        <label >Id</label>
+        <input  type="text" name="id"/>
+        <br>
+
+        <label >Title</label>
+        <input  type="text" name="title"/>
+        <br>
+
+        <label >Description</label>
+        <input  type="text" name="description"/>
+        <br>
+
+        <label >Time</label>
+        <input  type="time" name="time"/>
+        <br>
+
+        <label >Year</label>
+        <input  type="date" name="year"/>
+        <br>
+
+        <label >Director</label>
+        <input  type="text" name="director"/>
+        <br>
+
+        <label >Category</label>
+        <input  type="text" name="category"/>
+        <br>
+
+        <label >Imagen</label>
+        <input  type="file" name="imagen"/>
+        <br>
+
+        <button type="submit" name="btn"> Agregar Pelicula </button>
+    
+    </form>
+
+</body>
+</html>
