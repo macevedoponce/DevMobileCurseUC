@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="5dp"
+    tools:context=".InsertarCliente">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="registrar cliente"
+        android:textAllCaps="true"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:textColor="@color/purple_500"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tilIdCliente"
+        app:startIconDrawable="@drawable/ic_idcliente"
+        app:helperText="Requerido"
+        style="@style/Base.Widget.MaterialComponents.TextInputLayout.OutLinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtIdCliente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="Código del cliente" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tilNombreCliente"
+        app:startIconDrawable="@drawable/ic_nombre"
+        app:helperText="Requerido"
+        style="@style/Base.Widget.MaterialComponents.TextInputLayout.OutLinedBox">
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtNombreCliente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="Nombre del cliente" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tilApellidoCliente"
+        app:startIconDrawable="@drawable/ic_nombre"
+        app:helperText="Requerido"
+        style="@style/Base.Widget.MaterialComponents.TextInputLayout.OutLinedBox">
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtApellidoCliente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:hint="Apellido del cliente" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tilEmailCliente"
+        app:startIconDrawable="@drawable/ic_email"
+        app:helperText="Requerido"
+        style="@style/Base.Widget.MaterialComponents.TextInputLayout.OutLinedBox">
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtEmailCliente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:hint="Email del cliente" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tilTelefonoCliente"
+        app:startIconDrawable="@drawable/ic_telefono"
+        app:helperText="Requerido"
+        app:counterMaxLength="12"
+        app:counterEnabled="true"
+        style="@style/Base.Widget.MaterialComponents.TextInputLayout.OutLinedBox">
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtTelefonoCliente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:hint="Telefono del cliente" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnRegistrarCliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        android:text="Registrar Cliente"/>
+
+
+</LinearLayout>

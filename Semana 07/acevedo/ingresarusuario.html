@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargar imágenes</title>
+</head>
+<body>
+    <form method="post" action="recibirImagenRegistrada.php" enctype="multipart/form-data"> 
+        <label >Imagen</label>
+        <input  type="file" name="imagen"/>
+        <br>
+        <label >Id</label>
+        <input  type="text" name="idcliente"/>
+        <br>
+        <label >Nombres</label>
+        <input  type="text" name="nombres"/>
+        <br>
+        <label >Apellidos</label>
+        <input  type="text" name="apellidos"/>
+        <br>
+        <label >Email</label>
+        <input  type="text" name="email"/>
+        <br>
+        <label >Telefono</label>
+        <input  type="text" name="telefono"/>
+        <br>
+        <button type="submit" name="btn"> Agregar </button>
+    
+    </form>
+
+</body>
+</html>
