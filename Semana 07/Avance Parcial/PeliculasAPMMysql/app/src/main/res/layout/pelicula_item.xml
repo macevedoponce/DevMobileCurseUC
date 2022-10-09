@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layItem"
+    android:layout_width="match_parent"
+    android:layout_margin="10dp"
+    android:orientation="horizontal"
+    android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imgImagenPelicula"
+            android:layout_width="150dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:src="@drawable/img_base"/>
+        <LinearLayout
+            android:id="@+id/layDatosPelicula"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/txtTitlePelicula"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="20sp"
+                android:textAllCaps="true"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/txtDescriptionPelicula"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="15sp"
+                android:textStyle="italic"/>
+            <TextView
+                android:id="@+id/txtTimePelicula"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="12sp"/>
+            <TextView
+                android:id="@+id/txtYearPelicula"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="12sp"/>
+            <TextView
+                android:id="@+id/txtDirectorPelicula"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textStyle="bold"
+                android:textSize="12sp"/>
+            <TextView
+                android:id="@+id/txtCategoryPelicula"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textStyle="italic"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+
+</LinearLayout>

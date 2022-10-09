@@ -1,5 +1,5 @@
 package com.acevedo.peliculasapmmysql.UtilAPM;
 
 public class Util {
-    public static final String RUTA="http://192.168.1.46:8080/acevedoPelicula/";
+    public static final String RUTA="http://192.168.0.20:8080/acevedoPelicula/";
 }

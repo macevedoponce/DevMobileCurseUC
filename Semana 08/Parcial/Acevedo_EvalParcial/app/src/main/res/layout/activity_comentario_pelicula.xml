@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    tools:context=".ui.comentario.ComentarioPelicula">
+
+    <ImageButton
+        android:id="@+id/btnRegresar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_volver"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Añadir comentario"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginTop="20dp"
+        android:textAllCaps="true"
+        android:textSize="25sp"
+        android:gravity="center"
+        />
+
+    <RatingBar
+        android:id="@+id/ratCalificacion"
+        android:layout_marginTop="15dp"
+        android:numStars="5"
+        android:rating="0"
+        android:stepSize="1"
+        android:layout_gravity="center"
+        android:isIndicator="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilComentario"
+        style="@style/Base.Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        app:helperText="Requerido"
+        app:startIconDrawable="@drawable/ic_descripcion_pelicula">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtComentario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Comentario"
+            android:inputType="textAutoCorrect" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+    <Button
+        android:id="@+id/btnAddComentario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Registrar Comentario"/>
+</LinearLayout>
+

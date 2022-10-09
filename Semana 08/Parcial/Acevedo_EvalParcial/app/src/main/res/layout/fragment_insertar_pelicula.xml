@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_margin="5dp"
+        tools:context=".ui.insertar.InsertarPelicula">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="registrar pelicula"
+            android:textSize="24sp"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:gravity="center"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilIdPelicula"
+            style="@style/Base.Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:helperText="Requerido"
+            app:startIconDrawable="@drawable/ic_id_pelicula">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtIdPelicula"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Código de pelicula"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilTitlePelicula"
+            style="@style/Base.Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:helperText="Requerido"
+            app:startIconDrawable="@drawable/ic_titulo_pelicula">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtTitlePelicula"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Titulo"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilDescripcionPelicula"
+            style="@style/Base.Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:helperText="Requerido"
+            app:startIconDrawable="@drawable/ic_descripcion_pelicula">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtDescripcionPelicula"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Descripción"
+                android:inputType="textMultiLine" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilDuracionPelicula"
+            style="@style/Base.Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:helperText="Requerido"
+            app:startIconDrawable="@drawable/ic_duracion_pelicula">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtDuracionPelicula"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Duración"
+                android:inputType="time" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilYearPelicula"
+            style="@style/Base.Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:helperText="Requerido"
+            app:startIconDrawable="@drawable/ic_year_pelicula">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtYearPelicula"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Año de lanzamiento"
+                android:inputType="date" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilDirectorPelicula"
+            style="@style/Base.Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:helperText="Requerido"
+            app:startIconDrawable="@drawable/ic_director_pelicula">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtDirectorPelicula"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Director"
+                android:inputType="textPersonName" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilCategoriaPelicula"
+            style="@style/Base.Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:helperText="Requerido"
+            app:startIconDrawable="@drawable/ic_categoria_pelicula">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtCategoriaPelicula"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Categoria"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilImagenPelicula"
+            style="@style/Base.Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:helperText="Requerido"
+            app:startIconDrawable="@drawable/ic_imagen_pelicula">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtImagenPelicula"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Url Imagen" android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnInsertarPelicula"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="registrar pelicula"
+            android:textAllCaps="true"
+            android:textStyle="bold"/>
+
+
+    </LinearLayout>
+
+</ScrollView>

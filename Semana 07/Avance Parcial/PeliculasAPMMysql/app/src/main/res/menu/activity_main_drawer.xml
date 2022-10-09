@@ -13,6 +13,10 @@
             android:icon="@drawable/ic_consultar_pelicula"
             android:title="@string/menu_consultar" />
         <item
+            android:id="@+id/nav_lista_imagen"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/menu_lista_imagen" />
+        <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_menu_camera"
             android:title="@string/menu_home" />

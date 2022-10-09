@@ -12,6 +12,12 @@
         tools:layout="@layout/fragment_insertar_pelicula" />
 
     <fragment
+        android:id="@+id/nav_lista_imagen"
+        android:name="com.acevedo.peliculasapmmysql.Listas.ListaPeliculaImagen"
+        android:label="@string/menu_lista_imagen"
+        tools:layout="@layout/fragment_lista_pelicula_imagen" />
+
+    <fragment
         android:id="@+id/nav_consultar"
         android:name="com.acevedo.peliculasapmmysql.ui.consultar.ConsultarPelicula"
         android:label="@string/menu_consultar"
