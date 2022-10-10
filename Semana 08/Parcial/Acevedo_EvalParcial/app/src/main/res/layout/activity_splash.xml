@@ -4,12 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/banner"
     tools:context=".Splash">
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="center"
-        app:srcCompat="@drawable/banner"/>
 
     <View  android:layout_height="match_parent"
         android:layout_width="match_parent"
@@ -20,36 +16,27 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="top|center"
-
         >
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:gravity="center"
-            android:layout_weight="2.5"
+            android:layout_weight="4"
             >
             <ImageView
-                android:id="@+id/splashLogo"
+                android:id="@+id/imgLogo"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 app:srcCompat="@drawable/logo"
                 ></ImageView>
             <ImageView
-                android:layout_width="300dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:layout_height="60dp"
+                android:id="@+id/imgApellido"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginTop="20dp"
                 app:srcCompat="@drawable/text"
                 ></ImageView>
-
-
-            <ProgressBar
-                android:id="@+id/progressBar2"
-                android:layout_marginTop="200dp"
-                style="?android:attr/progressBarStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
 
         </LinearLayout>
 
@@ -57,38 +44,30 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:orientation="horizontal"
-            android:layout_weight="9"
+            android:orientation="vertical"
+            android:layout_weight="7"
             >
-            <TextView
-                android:id="@+id/tvRegistrar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ya tienes cuenta?"
-                android:textColor="@color/white"
-                android:textSize="14sp"
-                android:typeface="sans"
-                android:layout_marginRight="20dp"
-                ></TextView>
-            <TextView
-                android:id="@+id/tvIniciar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Inicia sesion"
-                android:textColor="@color/white"
-                android:textSize="14sp"
-                android:typeface="sans"
-                ></TextView>
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
         </LinearLayout>
         <TextView
+            android:id="@+id/tvCreador"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Terminos de uso y privacidad"
+            android:layout_marginTop="20dp"
+            android:text="Miguel Acevedo"
+            android:textAllCaps="true"
             android:textColor="@color/white"
-            android:textSize="12sp"
             android:gravity="center"
-
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:typeface="sans"
+            android:layout_marginBottom="20dp"
             ></TextView>
     </LinearLayout>
 
