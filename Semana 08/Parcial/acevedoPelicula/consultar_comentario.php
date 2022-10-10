@@ -4,42 +4,38 @@ $database_localhost ="peliculas_acevedo";
 $username_localhost ="root";
 $password_localhost ="";
 
-$json=array();
+$conexion = mysqli_connect($hostname_localhost,$username_localhost,$password_localhost,$database_localhost);
 
-    if(isset($_GET["id_pelicula"])){
-		$id_pelicula=$_GET["id_pelicula"];
-				
-		$conexion = mysqli_connect($hostname_localhost,$username_localhost,$password_localhost,$database_localhost);
+if(isset($_GET["id_pelicula"])){
 
-		$consulta="select * from comentario where id_pelicula='{$id_pelicula}'";
-        $resultado=mysqli_query($conexion,$consulta);
+	$id_pelicula=$_GET["id_pelicula"];
+
+	$result = array();
+	$result['comentario'] = array();
+	$query = "select * from comentario where id_pelicula='{$id_pelicula}'";
+	$response = mysqli_query($conexion,$query);
+
+	if(mysqli_num_rows($response)==0){ //si la cantidad de filas recepcionadas es 0 se envia que no hay comentarios
+		$resultado["id"]=0;
+		$resultado["calificacion"]=0;
+		$resultado["comentario"]="ningun comentario por ahora";
+		$resultado["id_pelicula"]=0;
+		$result['comentario'][]=$resultado;
+	}else{ // si la cnatidad de filas recepcionadas es mayor que 0, se devuelven los datos recepcionados
+		while ($registro = mysqli_fetch_array($response)) {
+			$resultado["id"]=$registro['id'];
+			$resultado["calificacion"]=$registro['calificacion'];
+			$resultado["comentario"]=$registro['comentario'];
+			$resultado["id_pelicula"]=$registro['id_pelicula'];
 			
-		if($registro=mysqli_fetch_array($resultado)){//arreglo result
-			while($registro=mysqli_fetch_array($resultado)){
-                $result["id"]=$registro['id'];
-                $result["calificacion"]=$registro['calificacion'];
-                $result["comentario"]=$registro['comentario'];
-                $result["id_pelicula"]=$registro['id_pelicula'];
-                $json['comentario'][]=$result;
-            }
-            
-		}else{
-			$result["id"]=0;
-            $result["calificacion"]=0;
-            $result["comentario"]="ningun comentario por ahora";
-			$result["id_pelicula"]=0;
-            $json['comentario'][]=$result;
-            
+			array_push($result['comentario'],$resultado);
 		}
-		echo json_encode($json);
-		mysqli_close($conexion);
-		
 	}
-	
-	else{
-		$resultar["success"]=0;
-		$resultar["message"]='Ws no Retorna';
-		$json['comentario'][]=$resultar;
-		echo json_encode($json);
-	}
+	echo json_encode($result);
+	mysqli_close($conexion);
+}
+else{
+	echo "Se requiere que envie id_pelicula";
+}
+
 ?>
