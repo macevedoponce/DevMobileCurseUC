@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".RegistrarPedido">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="registrar pedidos"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:textAllCaps="true"
+        android:gravity="center"
+        android:layout_margin="15dp"
+        />
+    <Spinner
+        android:id="@+id/spTipo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/tipospedido"
+        android:layout_margin="10dp"
+        android:layout_marginBottom="15dp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilDescripcion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtDescripcion"
+            android:hint="Descripción brevemente el pedido"
+            android:ems="10"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilDestinatario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtDestinatario"
+            android:hint="Nombre del destinatario"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:ems="10"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnRegistrarPedido"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Registrar"/>
+
+
+
+
+</LinearLayout>

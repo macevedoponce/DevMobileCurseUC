@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "243042094735",
+    "firebase_url": "https://fir-maap-default-rtdb.firebaseio.com",
+    "project_id": "fir-maap",
+    "storage_bucket": "fir-maap.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:243042094735:android:215068b514bd08a1582afa",
+        "android_client_info": {
+          "package_name": "com.example.firebase_maap"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "243042094735-kgevrqkcnr03dvb4bgaufv7rbsp15ibf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJRJH8hCRKrHM3yEmvER9jOxcgwg1WMxs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "243042094735-kgevrqkcnr03dvb4bgaufv7rbsp15ibf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

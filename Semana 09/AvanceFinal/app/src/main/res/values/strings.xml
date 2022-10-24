@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">AvanceFinal</string>
+    <string name="title_activity_maps">Map</string>
+
+    <string-array name="tipospedido">
+        <item>"Carga Simple"</item>
+        <item>"Carga Pesada"</item>
+        <item>"Sobre"</item>
+    </string-array>
+    <string name="title_activity_ver_pedido_mapa">Map</string>
+
+</resources>

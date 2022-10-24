@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".Entrega">
+
+    <TextView
+        android:id="@+id/txtTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pedidos por entregar"
+        android:textSize="35dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        />
+    <Spinner
+        android:id="@+id/spFiltro"
+        android:entries="@array/distritos"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:layout_marginBottom="15dp"/>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lstPedidosEntregar"/>
+
+</LinearLayout>

@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">FireBase_maap</string>
+    <string-array name="tipospedido">
+        <item>"Carga Simple"</item>
+        <item>"Carga Pesada"</item>
+        <item>"Sobre"</item>
+    </string-array>
+
+    <string-array name="distritos">
+        <item>"Huancayo"</item>
+        <item>"El Tambo"</item>
+        <item>"Chilca"</item>
+        <item>"Chupaca"</item>
+        <item>"Huancan"</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "638329657171",
+    "firebase_url": "https://finalavance-default-rtdb.firebaseio.com",
+    "project_id": "finalavance",
+    "storage_bucket": "finalavance.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:638329657171:android:9843d225292ceaa75173a6",
+        "android_client_info": {
+          "package_name": "com.acevedo.avancefinal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "638329657171-b7945sk3uukbc7devhogd4cme2ctnga3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdy7KJPR30SuDVFCLesKFAsaYzFFFLZbM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "638329657171-b7945sk3uukbc7devhogd4cme2ctnga3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

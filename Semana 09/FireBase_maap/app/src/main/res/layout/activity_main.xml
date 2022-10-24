@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="registrar pedidos"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:textAllCaps="true"
+        android:gravity="center"
+        android:layout_margin="15dp"
+        />
+    <Spinner
+        android:id="@+id/spTipo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/tipospedido"
+        android:layout_marginBottom="15dp"/>
+
+    <Spinner
+        android:id="@+id/spDistrito"
+        android:entries="@array/distritos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"/>
+    <EditText
+        android:id="@+id/edtDestinatario"
+        android:hint="Ingrese el Destinatario del pedido"
+        android:layout_width="match_parent"
+        android:ems="10"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/edtDireccion"
+        android:hint="Direccioón Entrega"
+        android:ems="10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/edtDescripcion"
+        android:hint="Descripción brevemente el pedido"
+        android:ems="10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/btnRegistrarPedido"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Registrar"/>
+    <Button
+        android:id="@+id/btnVerPedidos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Listar Pedidos"/>
+
+    <ListView
+        android:id="@+id/lstPedidos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
