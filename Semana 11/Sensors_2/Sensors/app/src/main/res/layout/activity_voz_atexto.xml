@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VozATexto">
+
+    <TextView
+        android:id="@+id/txtTextoDetectado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:hint="Texto detectado"/>
+
+    <ImageButton
+        android:id="@+id/imgBtnSpeak"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="-70dp"
+        android:background="@drawable/ic_speak" />
+
+    <ImageButton
+        android:id="@+id/imgBtnRead"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="-140dp"
+        android:background="@drawable/ic_read" />
+
+    <ImageButton
+        android:id="@+id/imgBtnMic"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/ic_mic" />
+    <ImageButton
+        android:id="@+id/imgBtnSave"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="-70dp"
+        android:background="@drawable/ic_save" />
+
+</FrameLayout>

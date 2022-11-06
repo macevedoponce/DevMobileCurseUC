@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.rec.rec">
+    <TextView
+        android:id="@+id/txtTextoDetectado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="60dp"
+        android:hint=""
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/txtRuta"
+        android:hint=""
+        android:gravity="center"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="120dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="60dp">
+
+        <ImageButton
+            android:id="@+id/imgBtnPlay"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="80dp"
+            android:background="@drawable/ic_play" />
+
+        <ImageButton
+            android:id="@+id/imgBtnRec"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:backgroundTint="#F44336"
+            android:background="@drawable/ic_rec" />
+
+        <ImageButton
+            android:id="@+id/imgBtnSave"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="80dp"
+            android:background="@drawable/ic_save" />
+
+    </LinearLayout>
+
+
+
+
+</FrameLayout>
+
