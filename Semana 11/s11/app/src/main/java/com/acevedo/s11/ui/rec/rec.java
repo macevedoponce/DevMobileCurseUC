@@ -92,18 +92,18 @@ public class rec extends Fragment implements DialogSaveFile.EndDialog {
     }
 
     private void guardarArchivo(String edtNameFile) {
-        String estado= Environment.getExternalStorageState();
+        String estado= Environment.getExternalStorageState(); // estado actual del medio de almacenamiento
         String nameFile = edtNameFile+".txt";
 //        Toast.makeText(getContext(), estado, Toast.LENGTH_SHORT).show();
-        if (estado.equals(Environment.MEDIA_MOUNTED)){
+        if (estado.equals(Environment.MEDIA_MOUNTED)){ // si el medio esta presente y montado con acceso de lectura y escritura
             try{
                 String texto=txtTextoDetectado.getText().toString();
-                FileOutputStream objEscribirArchivo = null;
-                objEscribirArchivo = getContext().openFileOutput(nameFile, Context.MODE_PRIVATE);
-                objEscribirArchivo.write(texto.getBytes());
-                objEscribirArchivo.close();
-                String Ruta = getContext().getFilesDir() + "/" + nameFile;
-                txtRuta.setText(Ruta);
+                FileOutputStream objEscribirArchivo = null; //abre un archivo privado en la carpeta de la aplicación vacio
+                objEscribirArchivo = getContext().openFileOutput(nameFile, Context.MODE_PRIVATE);// crear archivo, solo la aplicación que llama puede acceder al archivo creado
+                objEscribirArchivo.write(texto.getBytes()); //escribir dentro del archivo creado
+                objEscribirArchivo.close(); //cerrar el archivo
+                String Ruta = getContext().getFilesDir() + "/" + nameFile; // concatena la direccion de guardado con el nombre del archivo que le da el usuario
+                txtRuta.setText(Ruta); //muestra la ruta en el txtRuta
                 Toast.makeText(getContext(), "Guardado" , Toast.LENGTH_SHORT).show();
                 txtTextoDetectado.setText("");
             }

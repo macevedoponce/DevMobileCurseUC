@@ -90,9 +90,9 @@ public class OpenFile extends Fragment implements DialogSaveFile.EndDialog{
     private void leerArchivo(String edtNameFile) {
         //Toast.makeText(getContext(), "Lectura", Toast.LENGTH_SHORT).show();
         try{
-           String nameFile = edtNameFile + ".txt";
-            BufferedReader leerArchivo = new BufferedReader(new InputStreamReader(requireContext().openFileInput(nameFile)));
-            String texto= leerArchivo.readLine();
+           String nameFile = edtNameFile + ".txt"; //nombre del archivo
+            BufferedReader leerArchivo = new BufferedReader(new InputStreamReader(requireContext().openFileInput(nameFile))); //abrir el archivo con el nombre que se le manda
+            String texto= leerArchivo.readLine(); //leer por lineas
             leerArchivo.close();
             txtTextoDeArchivo.setText(texto);
         }
