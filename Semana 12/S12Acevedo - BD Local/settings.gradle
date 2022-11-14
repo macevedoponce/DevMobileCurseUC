@@ -1,0 +1,2 @@
+rootProject.name = "S12Acevedo"
+include ':app'
