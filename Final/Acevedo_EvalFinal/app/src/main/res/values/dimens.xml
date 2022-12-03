@@ -1,0 +1,11 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="logo_secundario">20</dimen>
+    <dimen name="titulos">16</dimen>
+    <dimen name="botones">14</dimen>
+    <dimen name="second">12</dimen>
+    <dimen name="tit20">20</dimen>
+    <dimen name="tit40">40</dimen>
+</resources>
