@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -23,6 +24,8 @@ import android.widget.NumberPicker;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+
+import java.util.Locale;
 
 import acevedo.EvalFin.org.Clases.Lenguajes;
 import acevedo.EvalFin.org.Mediapp.LoginMediapp;
@@ -183,15 +186,15 @@ public class CuentaRepartidorFragment extends Fragment {
         btnAceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-//                if(lenguaje.getValue() > -1){
-//                    btnDocumento.setText(Documentos.getDocumentosArrayList().get(lenguaje.getValue()).getDocumento());
-//                    dialog.dismiss();
-//                }
-                dialog.dismiss();
-
-
-
+                String idioma="Español";
+                if(lenguaje.getValue() > -1){
+                    idioma = Lenguajes.getLenguajesArrayList().get(lenguaje.getValue()).getLenguaje();
+                }
+                if(idioma.equals("Ingles")){
+                    setLocale("en");
+                }else{
+                    setLocale("es");
+                } dialog.dismiss();
             }
         });
 
@@ -206,6 +209,25 @@ public class CuentaRepartidorFragment extends Fragment {
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
         dialog.getWindow().setGravity(Gravity.BOTTOM);
+    }
+
+    private void setLocale(String lenguaje) {
+        Locale locale = new Locale(lenguaje);
+        Locale.setDefault(locale);
+        Configuration configuration = new Configuration();
+        configuration.locale = locale;
+        getContext().getResources().updateConfiguration(configuration,this.getResources().getDisplayMetrics());
+
+        SharedPreferences preferences = getActivity().getSharedPreferences("settingsRepartidor", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("lenguaje",lenguaje);
+        editor.commit();
+    }
+
+    public void loadLocale(){
+        SharedPreferences preferences = getActivity().getSharedPreferences("settingsRepartidor", Context.MODE_PRIVATE);
+        String lenguaje = preferences.getString("lenguaje","");
+        setLocale(lenguaje);
     }
 
     private void cargarPreferencias() {

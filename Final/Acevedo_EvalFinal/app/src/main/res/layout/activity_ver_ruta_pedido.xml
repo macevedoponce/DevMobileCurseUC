@@ -23,93 +23,6 @@
         android:gravity="bottom"
         android:orientation="vertical">
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            map:cardCornerRadius="10dp"
-            map:cardElevation="5dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="3"
-                    android:layout_margin="10dp"
-                    android:src="@drawable/point"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="2"
-                            android:gravity="center"
-                            android:fontFamily="@font/poppins_bold"
-                            android:textSize="14sp"
-                            android:text="Sr."/>
-
-                        <TextView
-                            android:id="@+id/txtLatitud"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:fontFamily="@font/poppins_medium"
-                            android:textSize="14sp"
-                            android:textColor="@color/secondary"
-                            android:text=" Acevedo Ponce Miguel"/>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="2"
-                            android:gravity="center"
-                            android:fontFamily="@font/poppins_bold"
-                            android:textSize="14sp"
-                            android:text="Precio:"/>
-
-                        <TextView
-                            android:id="@+id/txtLongitud"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:fontFamily="@font/poppins_medium"
-                            android:textSize="14sp"
-                            android:text="S/ 20.50"/>
-
-                    </LinearLayout>
-
-
-
-
-
-                </LinearLayout>
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -145,5 +58,19 @@
                 android:textAllCaps="false"
                 android:text="@string/Cancelar" />
         </LinearLayout>
+
+        <Button
+            android:id="@+id/btnRegistrarEntrega"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_secondary"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:text="@string/RegistrarEntrega" />
     </LinearLayout>
 </RelativeLayout>

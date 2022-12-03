@@ -7,15 +7,21 @@ import androidx.fragment.app.FragmentActivity;
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.graphics.Point;
+import android.graphics.drawable.BitmapDrawable;
 import android.location.Location;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -23,11 +29,13 @@ import com.android.volley.Response;
 import com.android.volley.RetryPolicy;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -38,10 +46,15 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import acevedo.EvalFin.org.Mediapp.MiPerfil;
 import acevedo.EvalFin.org.R;
+import acevedo.EvalFin.org.Util.Util;
 import acevedo.EvalFin.org.databinding.ActivityVerRutaPedidoBinding;
 
 public class verRutaPedido extends FragmentActivity implements OnMapReadyCallback {
@@ -49,19 +62,24 @@ public class verRutaPedido extends FragmentActivity implements OnMapReadyCallbac
     private GoogleMap mMap;
     private ActivityVerRutaPedidoBinding binding;
 
-    Button btnComenzar,btnCancelar;
+    Button btnComenzar, btnCancelar,btnRegistrarEntrega;
 
-    JsonObjectRequest jsonObjectRequest;
-    RequestQueue request;
+    Double mLatOrigen, mLatDestino;
+    Double mLongOrigen, mLongDestino;
 
-    Double mLatOrigen;
-    Double mLongOrigen;
+
+    RequestQueue requestQueue;
+    StringRequest stringRequest;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        mLatDestino = getIntent().getDoubleExtra("mLatDestino",0);
+        mLongDestino = getIntent().getDoubleExtra("mLongDestino",0);
+        requestQueue = Volley.newRequestQueue(this);
         binding = ActivityVerRutaPedidoBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
@@ -70,11 +88,20 @@ public class verRutaPedido extends FragmentActivity implements OnMapReadyCallbac
         mapFragment.getMapAsync(this);
         btnComenzar = findViewById(R.id.btnComenzar);
         btnCancelar = findViewById(R.id.btnCancelar);
+        btnRegistrarEntrega = findViewById(R.id.btnRegistrarEntrega);
+        btnRegistrarEntrega.setVisibility(View.GONE);
 
         btnComenzar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(verRutaPedido.this,ComenzarEntrega.class);
+                actualizarDatos();
+            }
+        });
+
+        btnRegistrarEntrega.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(verRutaPedido.this,RegistrarEntrega.class);
                 startActivity(i);
             }
         });
@@ -89,17 +116,71 @@ public class verRutaPedido extends FragmentActivity implements OnMapReadyCallbac
 
     }
 
+    private void actualizarDatos(){
+
+        String id_pedido = getIntent().getStringExtra("id_pedido");
+        String estado = "1";
+
+        SharedPreferences preferences = getSharedPreferences("usuarioLoginRepartidor", Context.MODE_PRIVATE);
+        String id_repartidor = preferences.getString("id","");
+
+        String url = Util.RUTA+"actualizar_entrega.php";
+
+        stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Toast.makeText(verRutaPedido.this, "Iniciando ...", Toast.LENGTH_SHORT).show();
+
+                Intent i = new Intent(Intent.ACTION_VIEW,Uri.parse("google.navigation:q="+mLatDestino+","+mLongDestino+"&mode=1"));
+                i.setPackage("com.google.android.apps.maps");
+
+                if(i.resolveActivity(getPackageManager()) != null){
+                    btnRegistrarEntrega.setVisibility(View.VISIBLE);
+                    btnComenzar.setVisibility(View.GONE);
+                    btnCancelar.setVisibility(View.GONE);
+                    startActivity(i);
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(verRutaPedido.this, "error BD", Toast.LENGTH_SHORT).show();
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> parametros = new HashMap<>();
+                parametros.put("id_pedido",id_pedido);
+                parametros.put("id_repartidor",id_repartidor);
+                parametros.put("estado",estado);
+                return parametros;
+            }
+        };
+        requestQueue.add(stringRequest);
+
+    }
+
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
+        mMap.setMyLocationEnabled(true);
         direction();
     }
 
     private void direction() {
 
-        Double mLatDestino = getIntent().getDoubleExtra("mLatDestino",0);
-        Double mLongDestino = getIntent().getDoubleExtra("mLongDestino",0);
+
         obtenerLocalizacion();
         String destino = mLatDestino.toString() +", "+ mLongDestino.toString();
         String origen = mLatOrigen +", "+ mLongOrigen;
@@ -143,11 +224,11 @@ public class verRutaPedido extends FragmentActivity implements OnMapReadyCallbac
                             }
                             polylineOptions.addAll(points);
                             polylineOptions.width(10);
-                            polylineOptions.color(ContextCompat.getColor(verRutaPedido.this, R.color.secondary));
+                            polylineOptions.color(ContextCompat.getColor(verRutaPedido.this, R.color.primary));
                             polylineOptions.geodesic(true);
                         }
                         mMap.addPolyline(polylineOptions);
-                        mMap.addMarker(new MarkerOptions().position(new LatLng(mLatOrigen, mLongOrigen)).title("Tú posición"));
+                        mMap.addMarker(new MarkerOptions().icon(BitmapDescriptorFactory.fromResource(R.drawable.point)).position(new LatLng(mLatOrigen, mLongOrigen)).title("Tú posición"));
                         mMap.addMarker(new MarkerOptions().position(new LatLng(mLatDestino, mLongDestino)).title("Lugar de entrega"));
 
                         LatLngBounds bounds = new LatLngBounds.Builder()
@@ -218,5 +299,6 @@ public class verRutaPedido extends FragmentActivity implements OnMapReadyCallbac
         mLongOrigen = loc.getLongitude();
 
     }
+
 
 }

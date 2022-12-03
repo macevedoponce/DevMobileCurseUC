@@ -33,10 +33,13 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Locale;
 
 import acevedo.EvalFin.org.Clases.Lenguajes;
+import acevedo.EvalFin.org.Mediapp.AtencionCliente;
+import acevedo.EvalFin.org.Mediapp.Legales;
 import acevedo.EvalFin.org.Mediapp.LoginMediapp;
 import acevedo.EvalFin.org.Mediapp.MiHistorialPedidos;
 import acevedo.EvalFin.org.Mediapp.MiPerfil;
 import acevedo.EvalFin.org.Mediapp.MisPedidos;
+import acevedo.EvalFin.org.Mediapp.Politicas;
 import acevedo.EvalFin.org.R;
 
 
@@ -122,6 +125,30 @@ public class CuentaFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 showCambiarSizeFuente();
+            }
+        });
+
+        cardAtencionCliente.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getContext(), AtencionCliente.class);
+                startActivity(i);
+            }
+        });
+
+        cardPoliticas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getContext(), Politicas.class);
+                startActivity(i);
+            }
+        });
+
+        cardLegales.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getContext(), Legales.class);
+                startActivity(i);
             }
         });
         return vista;

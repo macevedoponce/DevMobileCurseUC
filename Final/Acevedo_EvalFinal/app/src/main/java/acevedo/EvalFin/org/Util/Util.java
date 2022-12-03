@@ -11,8 +11,7 @@ import java.util.List;
 
 public class Util {
     //public static final String RUTA="http://192.168.1.46/acevedoMediapp/"; //local
-    public static final String RUTA="http://192.168.232.128/acevedoMediapp/"; //mv
-    //public static final String RUTA="https://pruebasphaway.000webhostapp.com/acevedoMediapp/"; //remoto
+    public static final String RUTA="https://www.fjznerwj.lucusvirtual.es/acevedoMediapp/"; //remoto
 
 
 }

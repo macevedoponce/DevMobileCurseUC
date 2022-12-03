@@ -94,6 +94,15 @@
     <string name="idpedido">id pedido</string>
     <string name="fecha">fecha</string>
     <string name="DetPedidos">Detalle de Pedido</string>
+    <string name="Necesitasayuda">¿Necesitas ayuda?</string>
+    <string name="txtatencion">Para encontrar respuestas a tus dudas puedes ir a</string>
+    <string name="PreguntasFrecuentes">Preguntas Frecuentes</string>
+    <string name="Alternativa">o si deseas</string>
+    <string name="Proximamente">Proximamente</string>
+    <string name="EnviarConsulta">Envíanos tu consulta</string>
+    <string name="textPoliticasP1">La presente política de privacidad de Datos Personales (la “Política de Privacidad”), tiene por finalidad informarle la manera en que MEDIAPP S.A.C. (en adelante, “MediApp”), con R.U.C. N° 01234567891, con domicilio en Calle Víctor Alzamora N° 147, Urb. Santa Catalina, distrito de La Victoria, provincia y departamento de Lima, realiza el tratamiento de los Datos Personales que recopila de sus Usuarios a través de cuestionarios y consentimientos escritos u otorgados mediante el llenado de formularios electrónicos que se encuentran en el sitio https://www.mediapp.com.pe (en adelante, “Sitio Web”), la aplicación móvil android “Mediapp” (en adelante, “App de Mediapp”).</string>
+    <string name="textPoliticasP2">Para efectos de esta Política de Privacidad toda referencia a “nosotros” se entiende a Mediapp y cuando se refiera al “Usuario” se entiende a todas aquellas personas que naveguen, utilicen y/o realicen compras a través del Sitio Web y App Mediapp. En Mediapp aseguramos la máxima seguridad y protección de los Datos Personales de titularidad de nuestros Usuarios.</string>
+    <string name="textPoliticasP3">Le agradecemos leer esta Política de Privacidad antes de proporcionarnos sus datos personales de manera facultativa y, si está de acuerdo, marcar el recuadro de aceptación de manera previa y expresa. Estos datos son necesarios para cumplir con las finalidades descritas en la presente Política de Privacidad por lo que, al no permitir su tratamiento, impediría estar en condiciones para cumplir las mismas.</string>
 
 
 </resources>

@@ -5,7 +5,6 @@
     android:orientation="vertical"
     android:layout_height="wrap_content">
 
-
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -13,22 +12,21 @@
         android:layout_margin="10dp"
         app:cardElevation="10dp"
         >
-
         <LinearLayout
             android:layout_width="match_parent"
             android:orientation="vertical"
             android:layout_margin="10dp"
             android:layout_height="wrap_content">
-
             <TextView
+
                 android:id="@+id/txtEstadoPedido"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="PEDIDO RECIBIDO"
+                android:text="PEDIDO LIBRE"
                 android:layout_margin="10dp"
+                android:textSize="20sp"
                 android:fontFamily="@font/poppins_bold"
                 android:gravity="center"
-                android:textSize="20sp"
                 android:textColor="@color/primary"/>
 
             <LinearLayout
@@ -37,64 +35,56 @@
                 android:layout_margin="10dp"
                 android:orientation="horizontal">
 
-                <TextView
+                <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/idpedido"
-                    android:textAllCaps="true"
-                    android:fontFamily="@font/poppins_medium"
-                    android:textSize="12sp"/>
-
-                <TextView
-                    android:id="@+id/txtIdPedido"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:text="1"
-                    android:fontFamily="@font/poppins_bold"
-                    android:textSize="12sp"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/TotalPagar"
-                    android:fontFamily="@font/poppins_medium"
-                    android:textAllCaps="true"
-                    android:textSize="12sp"/>
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:src="@drawable/point"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
+
                     <TextView
+                        android:id="@+id/txtPersona"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:gravity="right"
-                        android:text="S/ "
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:text="Acevedo Ponce Miguel"
                         android:fontFamily="@font/poppins_bold"
                         android:textSize="12sp"/>
-                    <TextView
-                        android:id="@+id/txtTotal"
+
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
                         android:layout_weight="2"
-                        android:gravity="right"
-                        android:text="115.90"
-                        android:fontFamily="@font/poppins_bold"
-                        android:textSize="12sp"/>
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/idpedido"
+                            android:fontFamily="@font/poppins_bold"
+                            android:textSize="12sp"/>
+
+                        <TextView
+                            android:id="@+id/txtCodigo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="1"
+                            android:fontFamily="@font/poppins_bold"
+                            android:textSize="12sp"/>
+
+                    </LinearLayout>
+
+
+
                 </LinearLayout>
 
             </LinearLayout>
@@ -106,23 +96,40 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/txtProducto"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/fecha"
+                    android:text="Alcohol Medicinal 70% - frasco 120ML"
                     android:fontFamily="@font/poppins_medium"
-                    android:textAllCaps="true"
                     android:textSize="12sp"/>
 
-                <TextView
-                    android:id="@+id/txtFecha"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:text="25/11/2022"
-                    android:fontFamily="@font/poppins_bold"
-                    android:textSize="12sp"/>
+                    android:layout_margin="10dp"
+                    android:layout_weight="2"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="S/"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textSize="12sp"/>
+
+                    <TextView
+                        android:id="@+id/txtPrecio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="1.80"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textSize="12sp"/>
+
+                </LinearLayout>
+
 
             </LinearLayout>
 
@@ -133,14 +140,13 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/txtDetallePedido"
+                    android:id="@+id/txtVerDireccion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:textColor="@color/secondary"
-                    android:text="@string/DetPedidos"
-                    android:textAllCaps="true"
+                    android:text="VER DIRECCIÓN"
                     android:fontFamily="@font/poppins_medium"
                     android:textSize="12sp"/>
 
