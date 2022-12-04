@@ -78,7 +78,9 @@ public class verRutaPedido extends FragmentActivity implements OnMapReadyCallbac
         btnRegistrarEntrega.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String id_pedido = getIntent().getStringExtra("id_pedido");
                 Intent i = new Intent(verRutaPedido.this,RegistrarEntrega.class);
+                i.putExtra("id_pedido",id_pedido);
                 startActivity(i);
             }
         });

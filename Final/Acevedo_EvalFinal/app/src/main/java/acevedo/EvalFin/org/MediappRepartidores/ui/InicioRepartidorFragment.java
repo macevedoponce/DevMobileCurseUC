@@ -69,13 +69,12 @@ import static android.content.Context.LOCATION_SERVICE;
 public class InicioRepartidorFragment extends Fragment {
 
     RecyclerView recyclerPedidos;
+    TextView txtNombreRepartidor;
 
     RequestQueue requestQueue;
     List<Pedido> mList;
 
     //nuevo
-
-    GoogleMap nMap;
     JsonObjectRequest jsonObjectRequest;
     RequestQueue request;
     Location location;
@@ -125,19 +124,17 @@ public class InicioRepartidorFragment extends Fragment {
         }
 
         //fin nuevo
-
+        txtNombreRepartidor = vista.findViewById(R.id.txtNombreRepartidor);
         recyclerPedidos = vista.findViewById(R.id.recyclerPedidos);
         recyclerPedidos.setHasFixedSize(true);
         recyclerPedidos.setLayoutManager(new LinearLayoutManager(getContext())); //vista lista
         requestQueue = Volley.newRequestQueue(getContext());
         mList = new ArrayList<>();
         cargarPedidos();
-
+        cargarPreferenciasRepartidor();
         return vista;
     }
-    //nuevp
-    //Geocoder geocoder = new Geocoder(getContext(), Locale.getDefault());
-    //fin nuevo
+
     private void cargarPedidos() {
         String url = Util.RUTA+"list_pedidos.php?"+"&estado=0";
 
@@ -330,5 +327,12 @@ public class InicioRepartidorFragment extends Fragment {
         }
 
         return poly;
+    }
+
+    private void cargarPreferenciasRepartidor() {
+        SharedPreferences preferences = getContext().getSharedPreferences("usuarioLoginRepartidor", Context.MODE_PRIVATE);
+        String nombre = preferences.getString("nombres","");
+        txtNombreRepartidor.setText(nombre);
+
     }
 }
