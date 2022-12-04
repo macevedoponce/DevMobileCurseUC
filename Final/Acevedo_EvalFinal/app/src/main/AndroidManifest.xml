@@ -27,7 +27,8 @@
         android:supportsRtl="true"
         android:theme="@style/Acevedo_EvalFinal_Principal"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Mediapp.Legales"></activity>
+        <activity android:name=".MediappRepartidores.PedidosEntregados"></activity>
+        <activity android:name=".Mediapp.Legales" />
         <activity android:name=".Mediapp.Politicas" />
         <activity android:name=".Mediapp.AtencionCliente" />
         <activity android:name=".Mediapp.buscarProducto" />

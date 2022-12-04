@@ -1,4 +1,4 @@
-package acevedo.EvalFin.org.Mediapp;
+package acevedo.EvalFin.org.MediappRepartidores;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -36,14 +36,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 import acevedo.EvalFin.org.Adapter.PedidoAdapter;
+import acevedo.EvalFin.org.Adapter.PedidosEntregadosAdapter;
 import acevedo.EvalFin.org.Clases.Pedido;
+import acevedo.EvalFin.org.Mediapp.MiHistorialPedidos;
 import acevedo.EvalFin.org.R;
 import acevedo.EvalFin.org.Util.Util;
 
-public class MiHistorialPedidos extends AppCompatActivity {
+public class PedidosEntregados extends AppCompatActivity {
 
     LinearLayout lyRegresar;
-    RecyclerView recyclerMiHistorialPedidos;
+    RecyclerView recyclerPedidosEntregados;
 
     RequestQueue requestQueue;
     List<Pedido> mList;
@@ -51,12 +53,11 @@ public class MiHistorialPedidos extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mi_historial_pedidos);
-
+        setContentView(R.layout.activity_pedidos_entregados);
         lyRegresar=findViewById(R.id.lyRegresar);
-        recyclerMiHistorialPedidos = findViewById(R.id.recyclerMiHistorialPedidos);
-        recyclerMiHistorialPedidos.setHasFixedSize(true);
-        recyclerMiHistorialPedidos.setLayoutManager(new LinearLayoutManager(this)); //vista lista
+        recyclerPedidosEntregados = findViewById(R.id.recyclerPedidosEntregados);
+        recyclerPedidosEntregados.setHasFixedSize(true);
+        recyclerPedidosEntregados.setLayoutManager(new LinearLayoutManager(this)); //vista lista
         requestQueue = Volley.newRequestQueue(this);
         mList = new ArrayList<>();
         cargarProductos();
@@ -70,36 +71,31 @@ public class MiHistorialPedidos extends AppCompatActivity {
         });
     }
 
-
     private void cargarProductos() {
-        SharedPreferences preferences = getSharedPreferences("usuarioLogin", Context.MODE_PRIVATE);
+        SharedPreferences preferences = getSharedPreferences("usuarioLoginRepartidor", Context.MODE_PRIVATE);
         String id_cliente = preferences.getString("id","0");
 
-        String url = Util.RUTA+"pedidos_usuario.php?id_cliente="+id_cliente+"&estado=2";
+        String url = Util.RUTA+"list_pedidos_entregados.php?id_cliente="+id_cliente;
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 try {
-                    JSONArray jsonArray = response.getJSONArray("pedidos_cliente");
+                    JSONArray jsonArray = response.getJSONArray("pedidos_entregados");
                     for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject jsonObject = jsonArray.getJSONObject(i);
-                        int id = jsonObject.getInt("id");
-                        Double latitud = jsonObject.getDouble("latitud");
-                        Double longitud = jsonObject.getDouble("longitud");
+                        int id = jsonObject.getInt("id_pedido");
                         String persona_recepcion = jsonObject.getString("persona_recepcion");
                         String celular_persona_recepcion = jsonObject.getString("celular_persona_recepcion");
                         String total = jsonObject.getString("total");
                         String fecha = jsonObject.getString("fecha");
                         String cantidad = jsonObject.getString("cantidad");
-                        String precio_unitario = jsonObject.getString("pre_unit");
                         String nombreProducto = jsonObject.getString("nombreProducto");
                         String img_url = jsonObject.getString("img_url");
-                        int estado = jsonObject.getInt("estado");
-                        Pedido pedido = new Pedido(id, estado, longitud, latitud, persona_recepcion, celular_persona_recepcion, total, fecha, cantidad, nombreProducto,precio_unitario, img_url);
+                        Pedido pedido = new Pedido(id, 0, 0.0, 0.0, persona_recepcion, celular_persona_recepcion, total, fecha, cantidad, nombreProducto,"0", img_url);
                         mList.add(pedido);
                     }
-                    PedidoAdapter adapter = new PedidoAdapter(MiHistorialPedidos.this, mList);
+                    PedidosEntregadosAdapter adapter = new PedidosEntregadosAdapter(PedidosEntregados.this, mList);
                     adapter.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
@@ -108,7 +104,7 @@ public class MiHistorialPedidos extends AppCompatActivity {
                         }
                     });
 
-                    recyclerMiHistorialPedidos.setAdapter(adapter);
+                    recyclerPedidosEntregados.setAdapter(adapter);
 
                     adapter.notifyDataSetChanged();
                 } catch (JSONException e) {
@@ -118,40 +114,43 @@ public class MiHistorialPedidos extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(MiHistorialPedidos.this, "No se encontro pedidos", Toast.LENGTH_SHORT).show();
+                Toast.makeText(PedidosEntregados.this, "No se encontro pedidos entregados", Toast.LENGTH_SHORT).show();
             }
         });
         requestQueue.add(jsonObjectRequest);
     }
 
     private void mayorInformacion(View view) {
-        String producto = mList.get(recyclerMiHistorialPedidos.getChildAdapterPosition(view)).getNombreProducto();
-        String cantidad = mList.get(recyclerMiHistorialPedidos.getChildAdapterPosition(view)).getCantidad();
-        String fecha = mList.get(recyclerMiHistorialPedidos.getChildAdapterPosition(view)).getFecha();
-        String total = mList.get(recyclerMiHistorialPedidos.getChildAdapterPosition(view)).getTotal();
-        String pre_unit = mList.get(recyclerMiHistorialPedidos.getChildAdapterPosition(view)).getPrecio_unitario();
-        String img_url = mList.get(recyclerMiHistorialPedidos.getChildAdapterPosition(view)).getImg_url();
+        String producto = mList.get(recyclerPedidosEntregados.getChildAdapterPosition(view)).getNombreProducto();
+        String persona = mList.get(recyclerPedidosEntregados.getChildAdapterPosition(view)).getPersona_recepcion();
+        String cantidad = mList.get(recyclerPedidosEntregados.getChildAdapterPosition(view)).getCantidad();
+        String fecha = mList.get(recyclerPedidosEntregados.getChildAdapterPosition(view)).getFecha();
+        String total = mList.get(recyclerPedidosEntregados.getChildAdapterPosition(view)).getTotal();
+        String celular = mList.get(recyclerPedidosEntregados.getChildAdapterPosition(view)).getCelular_persona_recepcion();
+        String img_url = mList.get(recyclerPedidosEntregados.getChildAdapterPosition(view)).getImg_url();
 
 
         final Dialog dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.dialogodetpedidohistorial);
+        dialog.setContentView(R.layout.dialogodetpedidoentregado);
 
         TextView txtProducto = dialog.findViewById(R.id.txtProducto);
+        TextView txtNombrePersona = dialog.findViewById(R.id.txtNombrePersona);
         TextView txtFecha = dialog.findViewById(R.id.txtFecha);
         TextView txtCantidad = dialog.findViewById(R.id.txtCantidad);
-        TextView txtPrecioUnit = dialog.findViewById(R.id.txtPrecioUnit);
+        TextView txtCelular = dialog.findViewById(R.id.txtCelular);
         TextView txtTotal = dialog.findViewById(R.id.txtTotal);
-        ImageView imgProducto = dialog.findViewById(R.id.imgProducto);
+        ImageView imgPersona = dialog.findViewById(R.id.imgPersona);
         Button btnAceptarRegistroExitoso = dialog.findViewById(R.id.btnAceptarRegistroExitoso);
 
 
         txtProducto.setText(producto);
+        txtNombrePersona.setText(persona);
         txtCantidad.setText(cantidad);
         txtFecha.setText(fecha);
-        txtPrecioUnit.setText(pre_unit);
+        txtCelular.setText(celular);
         txtTotal.setText(total);
-        Glide.with(this).load(img_url).into(imgProducto);
+        Glide.with(this).load(img_url).into(imgPersona);
 
         btnAceptarRegistroExitoso.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -168,6 +167,4 @@ public class MiHistorialPedidos extends AppCompatActivity {
         dialog.getWindow().setGravity(Gravity.CENTER);
 
     }
-
-
 }

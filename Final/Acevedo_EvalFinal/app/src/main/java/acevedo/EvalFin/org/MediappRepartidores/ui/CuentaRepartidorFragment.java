@@ -33,6 +33,7 @@ import acevedo.EvalFin.org.Mediapp.MiHistorialPedidos;
 import acevedo.EvalFin.org.Mediapp.MiPerfil;
 import acevedo.EvalFin.org.MediappRepartidores.LoginMediappRepartidor;
 import acevedo.EvalFin.org.MediappRepartidores.MainActivityRepartidor;
+import acevedo.EvalFin.org.MediappRepartidores.PedidosEntregados;
 import acevedo.EvalFin.org.R;
 
 
@@ -93,7 +94,7 @@ public class CuentaRepartidorFragment extends Fragment {
         lyPedidosEntregados.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getContext(), MiHistorialPedidos.class);
+                Intent i = new Intent(getContext(), PedidosEntregados.class);
                 startActivity(i);
             }
         });
