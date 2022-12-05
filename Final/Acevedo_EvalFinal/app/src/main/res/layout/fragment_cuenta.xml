@@ -27,7 +27,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fontFamily="@font/poppins_bold"
-                android:textSize="20sp"
+                android:textSize="@dimen/txt20"
                 android:text="Miguel Angel"/>
 
             <TextView
@@ -35,7 +35,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fontFamily="@font/poppins_regular"
-                android:textSize="12sp"
+                android:textSize="@dimen/txt12"
                 android:text="Acevedo Ponce"/>
 
 
@@ -102,7 +102,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:fontFamily="@font/poppins_light"
-                        android:textSize="12sp"
+                        android:textSize="@dimen/txt12"
                         android:layout_weight="1"
                         android:gravity="center"
                         android:text="@string/MiPerfil"/>
@@ -129,7 +129,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:fontFamily="@font/poppins_light"
-                        android:textSize="12sp"
+                        android:textSize="@dimen/txt12"
                         android:gravity="center"
                         android:layout_weight="1"
                         android:text="@string/MisPedidos"/>
@@ -157,7 +157,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:fontFamily="@font/poppins_light"
-                        android:textSize="12sp"
+                        android:textSize="@dimen/txt12"
                         android:gravity="center"
                         android:text="@string/HistorialPedidos"/>
 
@@ -177,7 +177,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/AjustesSoporte"
-        android:textSize="20sp"
+        android:textSize="@dimen/txt20"
         android:layout_margin="10dp"
         android:fontFamily="@font/poppins_regular"/>
 
@@ -216,13 +216,14 @@
                             android:src="@drawable/ic_atencion"/>
 
                         <TextView
+                            android:id="@+id/txt1"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:text="@string/AtCliente"
                             android:layout_marginStart="10dp"
                             android:layout_weight="1"
                             android:fontFamily="@font/poppins_regular"
-                            android:textSize="14sp"/>
+                            android:textSize="@dimen/txt14"/>
 
                         <ImageView
                             android:layout_width="14sp"
@@ -263,13 +264,14 @@
                             android:src="@drawable/ic_idioma"/>
 
                         <TextView
+                            android:id="@+id/txt2"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:text="@string/Idioma"
                             android:layout_marginStart="10dp"
                             android:layout_weight="1"
                             android:fontFamily="@font/poppins_regular"
-                            android:textSize="14sp"/>
+                            android:textSize="@dimen/txt14"/>
 
                         <ImageView
                             android:layout_width="14sp"
@@ -310,13 +312,14 @@
                             android:src="@drawable/ic_fuente_size"/>
 
                         <TextView
+                            android:id="@+id/txt3"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:text="@string/FuenteSize"
                             android:layout_marginStart="10dp"
                             android:layout_weight="1"
                             android:fontFamily="@font/poppins_regular"
-                            android:textSize="14sp"/>
+                            android:textSize="@dimen/txt14"/>
 
                         <ImageView
                             android:layout_width="14sp"
@@ -357,13 +360,14 @@
                             android:src="@drawable/ic_politicas"/>
 
                         <TextView
+                            android:id="@+id/txt4"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:text="@string/Politicas"
                             android:layout_marginStart="10dp"
                             android:layout_weight="1"
                             android:fontFamily="@font/poppins_regular"
-                            android:textSize="14sp"/>
+                            android:textSize="@dimen/txt14"/>
 
                         <ImageView
                             android:layout_width="14sp"
@@ -404,13 +408,14 @@
                             android:src="@drawable/ic_legales"/>
 
                         <TextView
+                            android:id="@+id/txt5"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:text="@string/Legales"
                             android:layout_marginStart="10dp"
                             android:layout_weight="1"
                             android:fontFamily="@font/poppins_regular"
-                            android:textSize="14sp"/>
+                            android:textSize="@dimen/txt14"/>
 
                         <ImageView
                             android:layout_width="14sp"
@@ -456,13 +461,14 @@
                     android:src="@drawable/ic_salir"/>
 
                 <TextView
+                    android:id="@+id/txt6"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="@string/Salir"
                     android:layout_marginStart="10dp"
                     android:layout_weight="1"
                     android:fontFamily="@font/poppins_regular"
-                    android:textSize="14sp"/>
+                    android:textSize="@dimen/txt14"/>
 
 
             </LinearLayout>

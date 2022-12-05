@@ -25,6 +25,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.NumberPicker;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
@@ -46,6 +47,7 @@ import acevedo.EvalFin.org.R;
 public class CuentaFragment extends Fragment {
 
     TextView txtNombres,txtApellidos;
+    TextView txt1,txt2,txt3,txt4,txt5,txt6;
     ImageView imgCliente;
     LinearLayout lyPerfil, lyPedidos, lyHistorialPedidos;
     CardView cardAtencionCliente, cardCambiarIdioma, cardSizeFuente, cardPoliticas, cardLegales, cardLogOut;
@@ -60,6 +62,13 @@ public class CuentaFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View vista = inflater.inflate(R.layout.fragment_cuenta, container, false);
+        txt1 = vista.findViewById(R.id.txt1);
+        txt2 = vista.findViewById(R.id.txt2);
+        txt3 = vista.findViewById(R.id.txt3);
+        txt4 = vista.findViewById(R.id.txt4);
+        txt5 = vista.findViewById(R.id.txt5);
+        txt6 = vista.findViewById(R.id.txt6);
+
         txtNombres = vista.findViewById(R.id.txtNombres);
         txtApellidos = vista.findViewById(R.id.txtApellidos);
         imgCliente = vista.findViewById(R.id.imgCliente);
@@ -178,8 +187,12 @@ public class CuentaFragment extends Fragment {
             public void onClick(View view) {
 
                 int sizeX = size.getValue();
-
-
+                txt1.setTextSize(sizeX);
+                txt2.setTextSize(sizeX);
+                txt3.setTextSize(sizeX);
+                txt4.setTextSize(sizeX);
+                txt5.setTextSize(sizeX);
+                txt6.setTextSize(sizeX);
                 dialog.dismiss();
 
 
