@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-12-2022 a las 09:29:29
+-- Tiempo de generación: 04-12-2022 a las 22:06:32
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.1.12
 
@@ -63,15 +63,6 @@ CREATE TABLE `det_venta` (
   `cantidad` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Volcado de datos para la tabla `det_venta`
---
-
-INSERT INTO `det_venta` (`id`, `id_pedido`, `id_producto`, `cantidad`) VALUES
-(1, 5, 2, 2),
-(2, 6, 12, 3),
-(3, 7, 19, 2);
-
 -- --------------------------------------------------------
 
 --
@@ -85,15 +76,6 @@ CREATE TABLE `pedidos_entregados` (
   `img_url` text DEFAULT NULL,
   `estado` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `pedidos_entregados`
---
-
-INSERT INTO `pedidos_entregados` (`id`, `id_pedido`, `id_repartidor`, `img_url`, `estado`) VALUES
-(1, 5, 3, 'imagenes/entregas/5.jpg', 2),
-(2, 6, 3, 'imagenes/entregas/6.jpg', 2),
-(3, 7, 3, 'imagenes/entregas/7.jpg', 2);
 
 -- --------------------------------------------------------
 
@@ -184,15 +166,6 @@ CREATE TABLE `user` (
   `img_url` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Volcado de datos para la tabla `user`
---
-
-INSERT INTO `user` (`id`, `documento`, `nombres`, `apPaterno`, `apMaterno`, `celular`, `f_nacimiento`, `genero`, `correo`, `password`, `tipo_user`, `tipo_documento`, `img_url`) VALUES
-(1, '41142091', 'Elizabeth Doris ', 'Ponce', 'De la Cruz', '987137124', '1972-08-26', 0, 'dorisponce260872@gmail.com', '$2y$10$jTveLm1VKRfhxqONrsqB/unoIjGaFZhdsAQD9SYN9tm7Euj0QJ1BS', 1, 0, 'http://192.168.1.46/acevedoMediapp/imagenes/usuarios/41142091.jpg'),
-(2, '73122365', 'ramon', 'Acevedo', 'ponce', '982126861', '1999-05-30', 1, 'xdmigue22222@gmail.com', '$2y$12$DrwErevWQyRp.EBCpCYcoOO9uC8kQnohz8e9MaMOw/1blc5ZcgzOm', 2, 0, 'http://192.168.1.46/acevedoMediapp/imagenes/usuarios/73122365.jpg'),
-(3, '70854578', 'Kevin Marlon', 'Morales ', 'Martínez ', '965451278', '0000-00-00', 0, 'repartidor@rep.com', '$2y$12$tQwvBNVuUkIDRQL.qAy1.e1W.J4i33h9uzMJ3nzRz69SAUTbDgLsK', 2, 0, 'http://192.168.1.46/acevedoMediapp/imagenes/user_default.jpg');
-
 -- --------------------------------------------------------
 
 --
@@ -210,15 +183,6 @@ CREATE TABLE `venta` (
   `fecha` date NOT NULL,
   `hora` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `venta`
---
-
-INSERT INTO `venta` (`id`, `id_cliente`, `longitud`, `latitud`, `persona_recepcion`, `celular`, `total`, `fecha`, `hora`) VALUES
-(5, 1, -75.2069004625082, -12.063659919572977, 'Ponce De la Cruz Elizabeth Doris ', 987137124, 4.12, '2022-12-03', '02:23:55'),
-(6, 1, -75.18517825752497, -12.02125585008175, 'Acevedo Ponce Miguel Angel', 982126861, 188.7, '2022-12-03', '03:50:50'),
-(7, 1, -75.18959367961357, -12.047984108876907, 'walter yaipen', 987456123, 253.8, '2022-12-03', '04:04:27');
 
 --
 -- Índices para tablas volcadas
@@ -286,13 +250,13 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT de la tabla `det_venta`
 --
 ALTER TABLE `det_venta`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `pedidos_entregados`
 --
 ALTER TABLE `pedidos_entregados`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
@@ -310,13 +274,13 @@ ALTER TABLE `rol`
 -- AUTO_INCREMENT de la tabla `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `venta`
 --
 ALTER TABLE `venta`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas

@@ -292,7 +292,7 @@ public class MiPerfil extends AppCompatActivity {
         stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Toast.makeText(MiPerfil.this, "Imagen Registrada", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MiPerfil.this, "Datos actualizados correctamente", Toast.LENGTH_SHORT).show();
                 String imagen = Util.RUTA+"imagenes/usuarios/"+documento+".jpg";
                 if(user == 2){
                     SharedPreferences preferences = getSharedPreferences("usuarioLoginRepartidor", Context.MODE_PRIVATE);
@@ -323,6 +323,8 @@ public class MiPerfil extends AppCompatActivity {
                     editor.putString("img_url",imagen);
                     editor.commit();
                 }
+                onBackPressed();
+                finish();
             }
         }, new Response.ErrorListener() {
             @Override
